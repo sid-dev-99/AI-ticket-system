@@ -9,11 +9,9 @@ import { useRouter } from "next/navigation";
 export default function Chatbot() {
 
     const router = useRouter();
-
-    const handleSubmit = (e: React.MouseEventHandler<HTMLFormElement> | undefined) => {
-      e.preventDefault();
-      router.push("/bookingDetails");
-    };
+    const handleSubmit = (e: React.MouseEventHandler<HTMLButtonElement>) => { 
+        router.push("/bookingDetails");
+    }
     
     const [showMuseumOptions, setShowMuseumOptions] = useState(false)
 
@@ -56,7 +54,7 @@ export default function Chatbot() {
                     <p className="text-black">select one! Here are 4 museum options for you to explore:</p>
                     <div className="grid grid-cols-2 gap-2 mt-4">
                       <div>
-                        <Link href="#" prefetch={false} onClick={handleSubmit}>
+                        <Link href="/bookingDetails" prefetch={false}>
                           <img
                             src="/delhi.jpg"
                             alt="National Museum Delhi"
@@ -69,7 +67,7 @@ export default function Chatbot() {
                         <p className="text-sm text-muted-foreground mt-1">National Museum</p>
                       </div>
                       <div>
-                        <Link href="#" prefetch={false}>
+                        <Link href="/bookingDetails" prefetch={false}>
                           <img
                             src="/mumbai.jpg"
                             alt="Wales Museum Mumbai"
@@ -82,7 +80,7 @@ export default function Chatbot() {
                         <p className="text-sm text-muted-foreground mt-1">Wales Museum</p>
                       </div>
                       <div>
-                        <Link href="#" prefetch={false}>
+                        <Link href="bookingDetails" prefetch={false}>
                           <img
                             src="/tridev.jpg"
                             alt="Napier Museum"
@@ -95,7 +93,7 @@ export default function Chatbot() {
                         <p className="text-sm text-muted-foreground mt-1">Napier Museum </p>
                       </div>
                       <div>
-                        <Link href="#" prefetch={false}>
+                        <Link href="bookingDetails" prefetch={false}>
                           <img
                             src="/ahmd.jpeg"
                             alt="Museum 4"
