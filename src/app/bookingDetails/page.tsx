@@ -21,9 +21,9 @@ export default function Component() {
 
   const router = useRouter();
 
-  const handleSubmit = (e: React.MouseEventHandler<HTMLButtonElement>) => {
+  const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     router.push("/paymentDetails");
- }
+  }
 
 
   return (
